@@ -1,4 +1,4 @@
-from responses import Edad
+from responses import Edad, Sexo, MetodoAnticonceptivo, ExamenFisico
 
 SINTOMAS = ['edad', 'sexo', 'embarazo_actual', 'embarazo_planificado',
             'metodo_anticonceptivo', 'enfermedad_patologica', 'controlada',
@@ -53,6 +53,168 @@ r1 = {'diagnostico': NO_APTO_MENOR_EDAD,
 r2 = {'diagnostico': NO_APTO_MAYOR_EDAD,
       'sintomas': {'edad': Edad.MAYOR}}
 
+r3 = {'diagnostico': NO_APTO_DURANTE_EMBARAZO,
+      'sintomas': {'edad': Edad.APTO,
+                    'sexo': Sexo.FEMENINO,
+                   'embarazo_actual': True}}
+
+ r4 = {
+     'diagnostico': NO_APTO_PLANIFICA_EMBARAZO,
+     'sintomas': {
+          'edad': Edad.APTO,
+          'sexo': Sexo.FEMENINO,
+          'embarazo_actual': False,
+          'embarazo_planificado': True
+     }
+ }
+
+r5 = {
+     'diagnostico': NO_APTO_SIN_METODO_ANTICONCEPTIVO,
+     'sintomas': {
+          'edad': Edad.APTO,
+          'sexo': Sexo.FEMENINO,
+          'embarazo_planificado': False,
+          'embarazo_actual': False,
+          'metodo_anticonceptivo': MetodoAnticonceptivo.NO_USA
+     }
+ }
+
+ r6 = {
+        'diagnostico': NO_APTO_CONDICION_FISICA_GRAVE,
+        'sintomas': {
+            'edad': Edad.APTO,
+            'sexo': Sexo.FEMENINO,
+            'embarazo_planificado': False,
+            'embarazo_actual': False,
+            'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+            'enfermedad_patologica': False,
+            'examen_fisico': ExamenFisico.GRAVE
+        }
+ }
+
+
+r7 = {
+    'diagnostico': RECALL_CONDICION_MEJORA,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_planificado': False,
+        'embarazo_actual': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'enfermedad_patologica': False,
+        'examen_fisico': ExamenFisico.INTERMEDIO
+        }
+}
+
+r8 = {
+    'diagnostico': RECALL_CONDICION_MEJORA,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_planificado': False,
+        'embarazo_actual': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'enfermedad_patologica': False,
+        'examen_fisico': ExamenFisico.INTERMEDIO
+        }
+}
+
+r9 = {
+    'diagnotico': RECALL_NO_CONTROLADA,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_planificado': False,
+        'embarazo_actual': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'enfermedad_patologica': True,
+        'controlado': False
+        }
+}
+
+r10 = {
+    'diagnotico': RECALL_NO_CONTROLADA,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_planificado': False,
+        'embarazo_actual': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'enfermedad_patologica': True,
+        'examen_fisico': ExamenFisico.INTERMEDIO
+        }
+}
+
+r11 = {
+    'diagnotico': NO_APTO_CONDICION_FISICA_GRAVE,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_planificado': False,
+        'embarazo_actual': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'enfermedad_patologica': True,
+        'examen_fisico': ExamenFisico.GRAVE,
+        'controlado': True,
+        }
+}
+
+
+r12 = {
+    'diagnotico': NO_APTO_CONDICION_FISICA_GRAVE,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_planificado': False,
+        'embarazo_actual': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'enfermedad_patologica': True,
+        'examen_fisico': ExamenFisico.GRAVE,
+        'controlado': True,
+        }
+}
+
+r13 = {
+    'diagnotico': RECALL_CONDICION_MEJORA,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_planificado': False,
+        'embarazo_actual': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'enfermedad_patologica': True,
+        'examen_fisico': ExamenFisico.INTERMEDIO,
+        'controlado': True,
+        }
+}
+
+r14 = {
+    'diagnotico': RECALL_CONDICION_MEJORA,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_planificado': False,
+        'embarazo_actual': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'enfermedad_patologica': True,
+        'examen_fisico': ExamenFisico.INTERMEDIO,
+        'controlado': True,
+        }
+}
+
+r15 = {
+    'diagnotico': NO_APTO_CONDICION_RESPIRATORIA_GRAVE,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_planificado': False,
+        'embarazo_actual': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'enfermedad_patologica': False,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.GRAVE,
+        }
+}
 
 class Paciente():
     def __init__(self):

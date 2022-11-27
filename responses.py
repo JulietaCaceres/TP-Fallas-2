@@ -15,7 +15,7 @@ class Sexo(str, Enum):
 class MetodoAnticonceptivo(str, Enum):
     NO_USA = "NO_USA"
     PRESERVATIVO = "PRESERVATIVO",
-    OTROS = "OTROS"
+    OTROS = "OTRO"
 
 
 class ExamenFisico(str, Enum):
