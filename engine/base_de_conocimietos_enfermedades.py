@@ -1,4 +1,6 @@
-from responses import Edad, Sexo, MetodoAnticonceptivo, ExamenFisico
+from responses import Edad, Sexo, MetodoAnticonceptivo,\
+    ExamenFisico, AuscultacionRespiratoria,\
+    AuscultacionCardiaca, Pulso
 
 SINTOMAS = ['edad', 'sexo', 'embarazo_actual', 'embarazo_planificado',
             'metodo_anticonceptivo', 'enfermedad_patologica', 'controlada',
@@ -55,42 +57,42 @@ r2 = {'diagnostico': NO_APTO_MAYOR_EDAD,
 
 r3 = {'diagnostico': NO_APTO_DURANTE_EMBARAZO,
       'sintomas': {'edad': Edad.APTO,
-                    'sexo': Sexo.FEMENINO,
+                   'sexo': Sexo.FEMENINO,
                    'embarazo_actual': True}}
 
- r4 = {
-     'diagnostico': NO_APTO_PLANIFICA_EMBARAZO,
-     'sintomas': {
-          'edad': Edad.APTO,
-          'sexo': Sexo.FEMENINO,
-          'embarazo_actual': False,
-          'embarazo_planificado': True
-     }
- }
+r4 = {
+    'diagnostico': NO_APTO_PLANIFICA_EMBARAZO,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': True
+    }
+}
 
 r5 = {
-     'diagnostico': NO_APTO_SIN_METODO_ANTICONCEPTIVO,
-     'sintomas': {
-          'edad': Edad.APTO,
-          'sexo': Sexo.FEMENINO,
-          'embarazo_planificado': False,
-          'embarazo_actual': False,
-          'metodo_anticonceptivo': MetodoAnticonceptivo.NO_USA
-     }
- }
+    'diagnostico': NO_APTO_SIN_METODO_ANTICONCEPTIVO,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_planificado': False,
+        'embarazo_actual': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.NO_USA
+    }
+}
 
- r6 = {
-        'diagnostico': NO_APTO_CONDICION_FISICA_GRAVE,
-        'sintomas': {
-            'edad': Edad.APTO,
-            'sexo': Sexo.FEMENINO,
-            'embarazo_planificado': False,
-            'embarazo_actual': False,
-            'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
-            'enfermedad_patologica': False,
-            'examen_fisico': ExamenFisico.GRAVE
-        }
- }
+r6 = {
+    'diagnostico': NO_APTO_CONDICION_FISICA_GRAVE,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_planificado': False,
+        'embarazo_actual': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'enfermedad_patologica': False,
+        'examen_fisico': ExamenFisico.GRAVE
+    }
+}
 
 
 r7 = {
@@ -103,7 +105,7 @@ r7 = {
         'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
         'enfermedad_patologica': False,
         'examen_fisico': ExamenFisico.INTERMEDIO
-        }
+    }
 }
 
 r8 = {
@@ -116,7 +118,7 @@ r8 = {
         'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
         'enfermedad_patologica': False,
         'examen_fisico': ExamenFisico.INTERMEDIO
-        }
+    }
 }
 
 r9 = {
@@ -129,7 +131,7 @@ r9 = {
         'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
         'enfermedad_patologica': True,
         'controlado': False
-        }
+    }
 }
 
 r10 = {
@@ -142,7 +144,7 @@ r10 = {
         'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
         'enfermedad_patologica': True,
         'examen_fisico': ExamenFisico.INTERMEDIO
-        }
+    }
 }
 
 r11 = {
@@ -156,7 +158,7 @@ r11 = {
         'enfermedad_patologica': True,
         'examen_fisico': ExamenFisico.GRAVE,
         'controlado': True,
-        }
+    }
 }
 
 
@@ -171,7 +173,7 @@ r12 = {
         'enfermedad_patologica': True,
         'examen_fisico': ExamenFisico.GRAVE,
         'controlado': True,
-        }
+    }
 }
 
 r13 = {
@@ -185,7 +187,7 @@ r13 = {
         'enfermedad_patologica': True,
         'examen_fisico': ExamenFisico.INTERMEDIO,
         'controlado': True,
-        }
+    }
 }
 
 r14 = {
@@ -195,11 +197,11 @@ r14 = {
         'sexo': Sexo.FEMENINO,
         'embarazo_planificado': False,
         'embarazo_actual': False,
-        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
         'enfermedad_patologica': True,
         'examen_fisico': ExamenFisico.INTERMEDIO,
         'controlado': True,
-        }
+    }
 }
 
 r15 = {
@@ -209,12 +211,680 @@ r15 = {
         'sexo': Sexo.MASCULINO,
         'embarazo_planificado': False,
         'embarazo_actual': False,
-        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
         'enfermedad_patologica': False,
         'examen_fisico': ExamenFisico.NORMAL,
         'auscultacion_respiratoria': AuscultacionRespiratoria.GRAVE,
-        }
+    }
 }
+
+
+r16 = {
+    'diagnotico': NO_APTO_CONDICION_RESPIRATORIA_GRAVE,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_planificado': False,
+        'embarazo_actual': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': False,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.GRAVE,
+    }
+}
+
+
+r17 = {
+    'diagnotico': RECALL_CONDICION_MEJORA,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_planificado': False,
+        'embarazo_actual': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': False,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.INTERMEDIO,
+    }
+}
+
+r18 = {
+    'diagnotico': RECALL_CONDICION_MEJORA,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_planificado': False,
+        'embarazo_actual': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': False,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.INTERMEDIO,
+    }
+}
+
+
+r19 = {
+    'diagnotico': NO_APTO_CONDICION_CARDIACA_GRAVE,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'controlado': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.GRAVE,
+    }
+}
+
+
+r20 = {
+    'diagnotico': NO_APTO_CONDICION_CARDIACA_GRAVE,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'controlado': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.GRAVE,
+    }
+}
+
+
+r21 = {
+    'diagnotico': RECALL_CONDICION_MEJORA,
+    'sinotmas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'controlado': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.INTERMEDIO,
+    }
+}
+
+r22 = {
+    'diagnotico': RECALL_CONDICION_MEJORA,
+    'sinotmas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'controlado': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.INTERMEDIO,
+    }
+}
+
+
+r23 = {
+    'diagnotico': NO_APTO_CONDICION_CARDIACA_GRAVE,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.GRAVE,
+    }
+}
+
+
+r24 = {
+    'diagnotico': NO_APTO_CONDICION_CARDIACA_GRAVE,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.GRAVE,
+    }
+}
+
+
+r25 = {
+    'diagnotico': RECALL_CONDICION_MEJORA,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.INTERMEDIO,
+    }
+}
+
+
+r26 = {
+    'diagnotico': RECALL_CONDICION_MEJORA,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.INTERMEDIO,
+    }
+}
+
+
+r27 = {
+    'diagnotico': NO_APTO_CONDICION_CARDIACA_GRAVE,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.GRAVE,
+    }
+}
+
+
+r28 = {
+    'diagnotico': NO_APTO_CONDICION_CARDIACA_GRAVE,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.GRAVE,
+    }
+}
+
+
+r29 = {
+    'diagnotico': RECALL_CONDICION_MEJORA,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.INTERMEDIO,
+    }
+}
+
+r30 = {
+    'diagnotico': RECALL_CONDICION_MEJORA,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.INTERMEDIO,
+    }
+}
+
+r31 = {
+    'diagnostico': NO_APTO_PULSO_GRAVE,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.GRAVE,
+    }
+}
+
+r32 = {
+    'diagnostico': NO_APTO_PULSO_GRAVE,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.GRAVE,
+    }
+}
+
+r33 = {
+    'diagnostico': RECALL_CONDICION_MEJORA,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': False,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.INTERMEDIO,
+    }
+}
+
+r34 = {
+    'diagnostico': RECALL_CONDICION_MEJORA,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': False,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.INTERMEDIO,
+    }
+}
+
+
+r35 = {
+    'diagnostico': NO_APTO_PULSO_GRAVE,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'controlada': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.GRAVE,
+    }
+}
+
+r36 = {
+    'diagnostico': NO_APTO_PULSO_GRAVE,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'controlada': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.GRAVE,
+    }
+}
+
+r37 = {
+    'diagnostico': RECALL_CONDICION_MEJORA,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'controlada': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.INTERMEDIO,
+    }
+}
+
+r38 = {
+    'diagnostico': RECALL_CONDICION_MEJORA,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'controlada': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.INTERMEDIO,
+    }
+}
+
+r39 = {
+    'diagnostico': NO_APTO_PASADO_COVID,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': False,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.GRAVE,
+        'covid': True,
+    }
+}
+
+r40 = {
+    'diagnostico': NO_APTO_PASADO_COVID,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': False,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'pulso': Pulso.NORMAL,
+        'covid': True,
+    }
+}
+
+r41 = {
+    'diagnostico': NO_APTO_PASADO_COVID,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'controlada': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.NORMAL,
+        'covid': True,
+    }
+}
+
+r42 = {
+    'diagnostico': NO_APTO_PASADO_COVID,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'controlada': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.NORMAL,
+        'covid': True,
+    }
+}
+
+r43 = {
+    'diagnostico': NO_APTO_VACUNADO_COVID,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': False,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.NORMAL,
+        'covid': False,
+        'vacunacion': True,
+    }
+}
+
+r44 = {
+    'diagnostico': NO_APTO_VACUNADO_COVID,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': False,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.NORMAL,
+        'covid': False,
+        'vacunacion': True,
+    }
+}
+
+r45 = {
+    'diagnostico': NO_APTO_VACUNADO_ANTES,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'controlada': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.NORMAL,
+        'covid': False,
+        'vacunacion': True,
+    }
+}
+
+r46 = {
+    'diagnostico': NO_APTO_VACUNADO_ANTES,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'controlada': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.NORMAL,
+        'covid': False,
+        'vacunacion': True,
+    }
+}
+
+r47 = {
+    'diagnostico': NO_APTO_SISTEMA_INMUNOLOGICO,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': False,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.NORMAL,
+        'covid': False,
+        'vacunacion': False,
+        'enfermedad_grave': True,
+    }
+}
+
+r48 = {
+    'diagnostico': NO_APTO_SISTEMA_INMUNOLOGICO,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': False,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.NORMAL,
+        'covid': False,
+        'vacunacion': False,
+        'enfermedad_grave': True,
+    }
+}
+
+r49 = {
+    'diagnostico': NO_APTO_SISTEMA_INMUNOLOGICO,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'controlada': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.NORMAL,
+        'covid': False,
+        'vacunacion': False,
+        'enfermedad_grave': True,
+    }
+}
+
+r50 = {
+    'diagnostico': NO_APTO_SISTEMA_INMUNOLOGICO,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'controlada': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.NORMAL,
+        'covid': False,
+        'vacunacion': False,
+        'enfermedad_grave': True,
+    }
+}
+
+r51 = {
+    'diagnostico': APTO_PARTICIPAR,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': False,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.NORMAL,
+        'covid': False,
+        'vacunacion': False,
+        'enfermedad_grave': False,
+    }
+}
+
+r52 = {
+    'diagnostico': APTO_PARTICIPAR,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': False,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.NORMAL,
+        'covid': False,
+        'vacunacion': False,
+        'enfermedad_grave': False,
+    }
+}
+
+r53 = {
+    'diagnostico': APTO_PARTICIPAR,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.MASCULINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'controlada': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.NORMAL,
+        'covid': False,
+        'vacunacion': False,
+        'enfermedad_grave': False,
+    }
+}
+
+r54 = {
+    'diagnostico': APTO_PARTICIPAR,
+    'sintomas': {
+        'edad': Edad.APTO,
+        'sexo': Sexo.FEMENINO,
+        'embarazo_actual': False,
+        'embarazo_planificado': False,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
+        'enfermedad_patologica': True,
+        'controlada': True,
+        'examen_fisico': ExamenFisico.NORMAL,
+        'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
+        'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
+        'pulso': Pulso.NORMAL,
+        'covid': False,
+        'vacunacion': False,
+        'enfermedad_grave': False,
+    }
+}
+
 
 class Paciente():
     def __init__(self):
@@ -228,7 +898,11 @@ class Paciente():
 class ConocimientoMedico():
 
     def __init__(self):
-        self.reglas = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10]
+        self.reglas = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13,
+                       r14, r15, r16, r17, r18, r19, r20, r21, r22, r23, r24,
+                       r25, r26, r27, r28, r29, r30, r31, r32, r33, r34, r35,
+                       r36, r37, r38, r39, r40, r41, r42, r43, r44, r45, r46,
+                       r47, r48, r49, r50, r51, r52, r53, r54]
         self.sintomas = SINTOMAS
         self.diagnosticos = DIAGNOSTICOS
 

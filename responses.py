@@ -23,6 +23,7 @@ class ExamenFisico(str, Enum):
     NORMAL = "NORMAL"
     GRAVE = "GRAVE"
 
+
 class AuscultacionRespiratoria(str, Enum):
     INTERMEDIO = "INTERMEDIO"
     NORMAL = "NORMAL"

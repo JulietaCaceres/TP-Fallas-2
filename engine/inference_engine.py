@@ -1,6 +1,7 @@
 from engine.base_de_conocimietos_enfermedades import ConocimientoMedico
 import six
 
+
 class InferenceEngine:
 
     def __init__(self):
@@ -46,17 +47,19 @@ class InferenceEngine:
         # high percentage is returned based on satisfaction of MATCH
         result = ''
         print(matchesRules)
-        
+
         diagnosisDict = dict()
-        
+
         for diagnosis in six.iterkeys(matchesRules):
             diagnosisDict[diagnosis] = round(max(matchesRules[diagnosis]))
-    
+
         diagnosis = max(diagnosisDict, key=diagnosisDict.get)
         if diagnosisDict[diagnosis] == 100:
             result = 'El diagnostico es ' + diagnosis
         else:
-            result = 'No encontramos un diagnostico que coincida completamente, pero el que más se asemeja es ' + diagnosis + ' con un ' + str(diagnosisDict[diagnosis]) + '%'
+            result = 'No encontramos un diagnostico que coincida completamente,\
+                      pero el que más se asemeja es ' + diagnosis + ' con \
+                      un ' + str(diagnosisDict[diagnosis]) + '%'
 
         print(result)
         return result

@@ -25,6 +25,7 @@ def encuesta():
 def resultado():
     return render_template('response.html')
 
+
 @app.route("/handle_data", methods=['GET', 'POST'])
 def handle_data():
     edad = request.args.get('edad')
