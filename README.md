@@ -1,5 +1,5 @@
 # TP-Fallas-1
-Trabajo Práctico Final. Análisis y Detección de Fallas. Universidad de Buenos Aires
+Trabajo Práctico Final. Análisis y Detección de Fallas II. Universidad de Buenos Aires
 
 ### Requerimientos:
  * Python 3.6+
