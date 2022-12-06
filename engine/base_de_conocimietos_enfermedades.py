@@ -88,7 +88,7 @@ r6 = {
         'sexo': Sexo.FEMENINO,
         'embarazo_planificado': False,
         'embarazo_actual': False,
-        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
         'enfermedad_patologica': False,
         'examen_fisico': ExamenFisico.GRAVE
     }
@@ -102,7 +102,7 @@ r7 = {
         'sexo': Sexo.FEMENINO,
         'embarazo_planificado': False,
         'embarazo_actual': False,
-        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
         'enfermedad_patologica': False,
         'examen_fisico': ExamenFisico.INTERMEDIO
     }
@@ -115,46 +115,46 @@ r8 = {
         'sexo': Sexo.MASCULINO,
         'embarazo_planificado': False,
         'embarazo_actual': False,
-        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
         'enfermedad_patologica': False,
         'examen_fisico': ExamenFisico.INTERMEDIO
     }
 }
 
 r9 = {
-    'diagnotico': RECALL_NO_CONTROLADA,
+    'diagnostico': RECALL_NO_CONTROLADA,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.FEMENINO,
         'embarazo_planificado': False,
         'embarazo_actual': False,
-        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
         'enfermedad_patologica': True,
         'controlado': False
     }
 }
 
 r10 = {
-    'diagnotico': RECALL_NO_CONTROLADA,
+    'diagnostico': RECALL_NO_CONTROLADA,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.MASCULINO,
         'embarazo_planificado': False,
         'embarazo_actual': False,
-        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
         'enfermedad_patologica': True,
         'examen_fisico': ExamenFisico.INTERMEDIO
     }
 }
 
 r11 = {
-    'diagnotico': NO_APTO_CONDICION_FISICA_GRAVE,
+    'diagnostico': NO_APTO_CONDICION_FISICA_GRAVE,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.MASCULINO,
         'embarazo_planificado': False,
         'embarazo_actual': False,
-        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
         'enfermedad_patologica': True,
         'examen_fisico': ExamenFisico.GRAVE,
         'controlado': True,
@@ -163,13 +163,13 @@ r11 = {
 
 
 r12 = {
-    'diagnotico': NO_APTO_CONDICION_FISICA_GRAVE,
+    'diagnostico': NO_APTO_CONDICION_FISICA_GRAVE,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.FEMENINO,
         'embarazo_planificado': False,
         'embarazo_actual': False,
-        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
         'enfermedad_patologica': True,
         'examen_fisico': ExamenFisico.GRAVE,
         'controlado': True,
@@ -177,13 +177,13 @@ r12 = {
 }
 
 r13 = {
-    'diagnotico': RECALL_CONDICION_MEJORA,
+    'diagnostico': RECALL_CONDICION_MEJORA,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.MASCULINO,
         'embarazo_planificado': False,
         'embarazo_actual': False,
-        'metodo_anticonceptivo': MetodoAnticonceptivo.OTRO,
+        'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
         'enfermedad_patologica': True,
         'examen_fisico': ExamenFisico.INTERMEDIO,
         'controlado': True,
@@ -191,7 +191,7 @@ r13 = {
 }
 
 r14 = {
-    'diagnotico': RECALL_CONDICION_MEJORA,
+    'diagnostico': RECALL_CONDICION_MEJORA,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.FEMENINO,
@@ -205,7 +205,7 @@ r14 = {
 }
 
 r15 = {
-    'diagnotico': NO_APTO_CONDICION_RESPIRATORIA_GRAVE,
+    'diagnostico': NO_APTO_CONDICION_RESPIRATORIA_GRAVE,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.MASCULINO,
@@ -220,7 +220,7 @@ r15 = {
 
 
 r16 = {
-    'diagnotico': NO_APTO_CONDICION_RESPIRATORIA_GRAVE,
+    'diagnostico': NO_APTO_CONDICION_RESPIRATORIA_GRAVE,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.FEMENINO,
@@ -235,7 +235,7 @@ r16 = {
 
 
 r17 = {
-    'diagnotico': RECALL_CONDICION_MEJORA,
+    'diagnostico': RECALL_CONDICION_MEJORA,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.MASCULINO,
@@ -249,7 +249,7 @@ r17 = {
 }
 
 r18 = {
-    'diagnotico': RECALL_CONDICION_MEJORA,
+    'diagnostico': RECALL_CONDICION_MEJORA,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.FEMENINO,
@@ -264,7 +264,7 @@ r18 = {
 
 
 r19 = {
-    'diagnotico': NO_APTO_CONDICION_CARDIACA_GRAVE,
+    'diagnostico': NO_APTO_CONDICION_CARDIACA_GRAVE,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.MASCULINO,
@@ -280,7 +280,7 @@ r19 = {
 
 
 r20 = {
-    'diagnotico': NO_APTO_CONDICION_CARDIACA_GRAVE,
+    'diagnostico': NO_APTO_CONDICION_CARDIACA_GRAVE,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.FEMENINO,
@@ -296,8 +296,8 @@ r20 = {
 
 
 r21 = {
-    'diagnotico': RECALL_CONDICION_MEJORA,
-    'sinotmas': {
+    'diagnostico': RECALL_CONDICION_MEJORA,
+    'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.MASCULINO,
         'embarazo_actual': False,
@@ -311,8 +311,8 @@ r21 = {
 }
 
 r22 = {
-    'diagnotico': RECALL_CONDICION_MEJORA,
-    'sinotmas': {
+    'diagnostico': RECALL_CONDICION_MEJORA,
+    'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.FEMENINO,
         'embarazo_actual': False,
@@ -327,7 +327,7 @@ r22 = {
 
 
 r23 = {
-    'diagnotico': NO_APTO_CONDICION_CARDIACA_GRAVE,
+    'diagnostico': NO_APTO_CONDICION_CARDIACA_GRAVE,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.MASCULINO,
@@ -343,7 +343,7 @@ r23 = {
 
 
 r24 = {
-    'diagnotico': NO_APTO_CONDICION_CARDIACA_GRAVE,
+    'diagnostico': NO_APTO_CONDICION_CARDIACA_GRAVE,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.FEMENINO,
@@ -359,7 +359,7 @@ r24 = {
 
 
 r25 = {
-    'diagnotico': RECALL_CONDICION_MEJORA,
+    'diagnostico': RECALL_CONDICION_MEJORA,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.MASCULINO,
@@ -375,7 +375,7 @@ r25 = {
 
 
 r26 = {
-    'diagnotico': RECALL_CONDICION_MEJORA,
+    'diagnostico': RECALL_CONDICION_MEJORA,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.FEMENINO,
@@ -391,7 +391,7 @@ r26 = {
 
 
 r27 = {
-    'diagnotico': NO_APTO_CONDICION_CARDIACA_GRAVE,
+    'diagnostico': NO_APTO_CONDICION_CARDIACA_GRAVE,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.MASCULINO,
@@ -407,7 +407,7 @@ r27 = {
 
 
 r28 = {
-    'diagnotico': NO_APTO_CONDICION_CARDIACA_GRAVE,
+    'diagnostico': NO_APTO_CONDICION_CARDIACA_GRAVE,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.FEMENINO,
@@ -423,7 +423,7 @@ r28 = {
 
 
 r29 = {
-    'diagnotico': RECALL_CONDICION_MEJORA,
+    'diagnostico': RECALL_CONDICION_MEJORA,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.MASCULINO,
@@ -438,7 +438,7 @@ r29 = {
 }
 
 r30 = {
-    'diagnotico': RECALL_CONDICION_MEJORA,
+    'diagnostico': RECALL_CONDICION_MEJORA,
     'sintomas': {
         'edad': Edad.APTO,
         'sexo': Sexo.FEMENINO,

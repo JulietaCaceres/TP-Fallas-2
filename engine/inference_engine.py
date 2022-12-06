@@ -34,35 +34,15 @@ class InferenceEngine:
         # getting each knowledge from the base
         for rule in self.__knowledgeBase.reglas:
             match = 0
+            print(rule)
             diagnostico = rule['diagnostico']
             # comparing each rule
             for sympthom in self.__knowledgeBase.sintomas:
-                if rule['sintomas'][sympthom] == userBase[sympthom]:
+                if sympthom in rule['sintomas'] and rule['sintomas'][sympthom] == userBase[sympthom]:
                     match += 1
-
-            # adding the percent of match for each target
-            matchesRules[diagnostico] \
-                .append(match / len(self.__knowledgeBase.sintomas) * 100)
-
-        # high percentage is returned based on satisfaction of MATCH
-        result = ''
-        print(matchesRules)
-
-        diagnosisDict = dict()
-
-        for diagnosis in six.iterkeys(matchesRules):
-            diagnosisDict[diagnosis] = round(max(matchesRules[diagnosis]))
-
-        diagnosis = max(diagnosisDict, key=diagnosisDict.get)
-        if diagnosisDict[diagnosis] == 100:
-            result = 'El diagnostico es ' + diagnosis
-        else:
-            result = 'No encontramos un diagnostico que coincida completamente,\
-                      pero el que más se asemeja es ' + diagnosis + ' con \
-                      un ' + str(diagnosisDict[diagnosis]) + '%'
-
-        print(result)
-        return result
+            if match == len(rule['sintomas']):
+                diagnosis = rule['diagnostico']
+                return diagnosis
 
     def __runBackwardChain(self, userBase):
         pass

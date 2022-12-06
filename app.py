@@ -1,5 +1,6 @@
 from responses import MetodoAnticonceptivo, Edad
 from selector import Voluntarie, Selector, Sexo
+from engine.inference_engine import InferenceEngine
 from flask import Flask
 from flask import request
 from flask import render_template
@@ -62,28 +63,26 @@ def handle_data():
             enfermedad_grave = {enfermedad_grave}
     """)
 
-    expert_engine = Selector()
-    expert_engine.reset()
-    voluntarie = Voluntarie(
-                            edad= Edad(edad),
-                            sexo=Sexo(sexo),
-                            embarazo_actual=embarazo_actual,
-                            embarazo_planificado=embarazo_planificado,
-                            metodo_anticonceptivo=MetodoAnticonceptivo(metodo_anticonceptivo),
-                            enfermedad_patologica=enfermedad_patologica,
-                            controlada=controlada,
-                            examen_fisico=examen_fisico,
-                            auscultacion_respiratoria=auscultacion_respiratoria,
-                            auscultacion_cardiaca=auscultacion_cardiaca,
-                            pulso=pulso,
-                            covid=covid,
-                            vacunacion=vacunacion,
-                            enfermedad_grave=enfermedad_grave,
-                            )
-    expert_engine.declare(voluntarie)
-    expert_engine.run()
-    print(expert_engine.response)
-    return render_template('response.html', packages=expert_engine)
+    expert_engine = InferenceEngine()
+    datos_voluntarie = {
+   "edad": Edad(edad),
+   "sexo": Sexo(sexo),
+   "embarazo_actual": embarazo_actual,
+   "embarazo_planificado": embarazo_planificado,
+   "metodo_anticonceptivo": MetodoAnticonceptivo(metodo_anticonceptivo),
+   "enfermedad_patologica": enfermedad_patologica,
+   "controlada": controlada,
+   "examen_fisico": examen_fisico,
+   "auscultacion_respiratoria": auscultacion_respiratoria,
+   "auscultacion_cardiaca": auscultacion_cardiaca,
+   "pulso": pulso,
+   "covid": covid,
+   "vacunacion": vacunacion,
+   "enfermedad_grave": enfermedad_grave,
+    }
+
+    resultado = expert_engine.startEngine(datos_voluntarie)
+    return render_template('response.html', resultado=resultado)
 
 
 if __name__ == "__main__":
