@@ -1,4 +1,4 @@
-from responses import Edad, Sexo, MetodoAnticonceptivo,\
+from engine.responses import Edad, Sexo, MetodoAnticonceptivo,\
     ExamenFisico, AuscultacionRespiratoria,\
     AuscultacionCardiaca, Pulso
 
@@ -144,6 +144,7 @@ r10 = {
         'embarazo_actual': False,
         'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
         'enfermedad_patologica': True,
+        'controlado': False,
         'examen_fisico': ExamenFisico.INTERMEDIO
     }
 }

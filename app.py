@@ -1,5 +1,5 @@
-from responses import MetodoAnticonceptivo, Edad
-from selector import Voluntarie, Selector, Sexo
+from engine.responses import MetodoAnticonceptivo, Edad
+from selector import Sexo
 from engine.inference_engine import InferenceEngine
 from flask import Flask
 from flask import request
