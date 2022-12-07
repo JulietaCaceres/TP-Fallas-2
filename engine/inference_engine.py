@@ -34,7 +34,6 @@ class InferenceEngine:
         # getting each knowledge from the base
         for rule in self.__knowledgeBase.reglas:
             match = 0
-            print(rule)
             diagnostico = rule['diagnostico']
             # comparing each rule
             for sympthom in self.__knowledgeBase.sintomas:
@@ -42,6 +41,7 @@ class InferenceEngine:
                     match += 1
             if match == len(rule['sintomas']):
                 diagnosis = rule['diagnostico']
+                print(diagnosis)
                 return diagnosis
 
     def __runBackwardChain(self, userBase):
