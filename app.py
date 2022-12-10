@@ -11,25 +11,20 @@ app = Flask(__name__)
 def response_to_boolean(response):
     return True if response == "SI" else False
 
+def __obtener_edad(edad: int):
+    if edad < 18:
+        return Edad("MENOR")
+    if edad >= 18 and edad <= 59:
+        return Edad("APTO")
+    return Edad("MAYOR")
 
 @app.route("/")
 def home():
-    return render_template('index.html')
-
-
-@app.route("/encuesta", methods=['GET', 'POST'])
-def encuesta():
-    return render_template('init.html')
-
-
-@app.route("/resulta", methods=['GET', 'POST'])
-def resultado():
-    return render_template('response.html')
-
+    return render_template('form.html')
 
 @app.route("/handle_data", methods=['GET', 'POST'])
 def handle_data():
-    edad = request.args.get('edad')
+    edad = int(request.args.get('edad'))
     sexo = request.args.get('sexo')
     embarazo_actual = response_to_boolean(request.args.get('embarazo_actual'))
     embarazo_planificado = response_to_boolean(request.args.get('embarazo_planificado'))
@@ -65,7 +60,7 @@ def handle_data():
 
     expert_engine = InferenceEngine()
     datos_voluntarie = {
-   "edad": Edad(edad),
+   "edad": __obtener_edad(edad),
    "sexo": Sexo(sexo),
    "embarazo_actual": embarazo_actual,
    "embarazo_planificado": embarazo_planificado,
@@ -82,7 +77,7 @@ def handle_data():
     }
 
     resultado = expert_engine.startEngine(datos_voluntarie)
-    return render_template('response.html', resultado=resultado)
+    return render_template('result.html', resultado=resultado)
 
 
 if __name__ == "__main__":
