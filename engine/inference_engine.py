@@ -43,6 +43,7 @@ class InferenceEngine:
                 diagnosis = rule['diagnostico']
                 print(diagnosis)
                 return diagnosis
+        return "APTO: Puede realizar el estudio"
 
     def __runBackwardChain(self, userBase):
         pass
