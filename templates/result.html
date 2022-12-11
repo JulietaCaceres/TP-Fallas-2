@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: rgb(0, 0, 0);
+        }
+        .container{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            background-image: url("https://media1.thehungryjpeg.com/thumbs/800_76565_596122651859c4384a3a6feca392ff6cfdfa2a83.jpg");
+            display: flex;
+            flex-direction: column;
+        }
+        /* styling for the form */
+        form{
+            width: 800px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 5px #000;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input:not(:last-child), select:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+        
+    </style>
+</head>
+<body class="container">
+    <h1>Candidatos a probar vacuna contra el Covid-19</h1>
+      <form action="/handle_data">
+        <div class="banner">
+          <h1>Resultado:</h1>
+        </div>
+        <div class="item">
+            <h2>{{ resultado }}</h2>
+        </div>
+        
+        <div class="container py-2 center"></div>
+            <div class="col-sm-12 text-center">
+                <button id="btnPrincipal" lass="button" onclick="location.href='/'" type="button">Nuevo formulario</button>
+            </div>
+        </div>
+    </form>
+  </body>
+</html>

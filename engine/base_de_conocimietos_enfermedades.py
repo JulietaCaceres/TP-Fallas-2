@@ -4,13 +4,14 @@ from engine.responses import Edad, Sexo, MetodoAnticonceptivo,\
 
 SINTOMAS = ['edad', 'sexo', 'embarazo_actual', 'embarazo_planificado',
             'metodo_anticonceptivo', 'enfermedad_patologica', 'controlada',
+            'examen_fisico',
             'auscultacion_respiratoria', 'auscultacion_cardiaca',
             'pulso', 'covid', 'vacunacion', 'enfermedad_grave']
 
 NO_SE_PUEDE_DETERMINAR = 'No se puede determinar la enfermedad con\
                               los datos de entrada.'
 NO_APTO_MENOR_EDAD = 'NO APTO: No puede realizar prueba si es menor de edad.'
-NO_APTO_MAYOR_EDAD = 'NO APTO: No puede realizar prueba si es menor de edad.'
+NO_APTO_MAYOR_EDAD = 'NO APTO: No puede realizar prueba si es mayor de edad.'
 NO_APTO_DURANTE_EMBARAZO = 'NO APTO: No puede realizar prueba durante\
                             el embarazo.'
 NO_APTO_PLANIFICA_EMBARAZO = 'NO APTO: No puede realizar la prueba\
@@ -35,19 +36,26 @@ RECALL_CONDICION_MEJORA = 'RECALL: Si su condición mejora se le volverá\
                            a llamar.'
 RECALL_NO_CONTROLADA = 'RECALL: No puede realizar la prueba si tiene una\
                         enfermedad o patología no controlada.'
-APTO_PARTICIPAR = 'APTO: Puede participar en el estudio"'
+APTO_PARTICIPAR = 'APTO: Puede participar en el estudio'
 
-DIAGNOSTICOS = [NO_SE_PUEDE_DETERMINAR, NO_APTO_MENOR_EDAD, NO_APTO_MAYOR_EDAD,
-                NO_APTO_DURANTE_EMBARAZO, NO_APTO_PLANIFICA_EMBARAZO,
+DIAGNOSTICOS = [NO_SE_PUEDE_DETERMINAR, 
+                NO_APTO_MENOR_EDAD, 
+                NO_APTO_MAYOR_EDAD,
+                NO_APTO_DURANTE_EMBARAZO, 
+                NO_APTO_PLANIFICA_EMBARAZO,
                 NO_APTO_SIN_METODO_ANTICONCEPTIVO,
                 NO_APTO_CONDICION_FISICA_GRAVE,
                 NO_APTO_CONDICION_RESPIRATORIA_GRAVE,
                 NO_APTO_CONDICION_CARDIACA_GRAVE,
-                NO_APTO_PULSO_GRAVE, NO_APTO_PASADO_COVID,
-                NO_APTO_VACUNADO_ANTES, NO_APTO_VACUNADO_COVID,
+                NO_APTO_PULSO_GRAVE, 
+                NO_APTO_PASADO_COVID,
+                NO_APTO_VACUNADO_ANTES, 
+                NO_APTO_VACUNADO_COVID,
                 NO_APTO_SISTEMA_INMUNOLOGICO,
-                RECALL_CONDICION_MEJORA, RECALL_NO_CONTROLADA,
-                RECALL_METODO_EFECTIVO, APTO_PARTICIPAR]
+                RECALL_CONDICION_MEJORA, 
+                RECALL_NO_CONTROLADA,
+                RECALL_METODO_EFECTIVO, 
+                APTO_PARTICIPAR]
 
 
 r1 = {'diagnostico': NO_APTO_MENOR_EDAD,
@@ -818,6 +826,7 @@ r51 = {
         'embarazo_planificado': False,
         'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
         'enfermedad_patologica': False,
+        'controlada': True,
         'examen_fisico': ExamenFisico.NORMAL,
         'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
         'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,
@@ -837,6 +846,7 @@ r52 = {
         'embarazo_planificado': False,
         'metodo_anticonceptivo': MetodoAnticonceptivo.OTROS,
         'enfermedad_patologica': False,
+        'controlada': True,
         'examen_fisico': ExamenFisico.NORMAL,
         'auscultacion_respiratoria': AuscultacionRespiratoria.NORMAL,
         'auscultacion_cardiaca': AuscultacionCardiaca.NORMAL,

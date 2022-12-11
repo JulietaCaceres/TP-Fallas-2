@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: rgb(0, 0, 0);
+        }
+        .container{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            background-image: url("https://media1.thehungryjpeg.com/thumbs/800_76565_596122651859c4384a3a6feca392ff6cfdfa2a83.jpg");
+            display: flex;
+            flex-direction: column;
+        }
+        /* styling for the form */
+        form{
+            width: 400px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 5px #000;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input:not(:last-child), select:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+        
+    </style>
+</head>
+<body class="container">
+    <h1>Candidatos a probar vacuna contra el Covid-19</h1>
+    <form action="/handle_data">
+
+        <label for="edad">Edad:</label>
+        <input type="number" placeholder="Ej: 28" name="edad" id="edad" required>
+
+        <label for="sexo">Sexo:</label>
+        <select name="sexo" id="sexo">
+            <option selected value="MASCULINO">Masculino</option>
+            <option value="FEMENINO">Femenino</option>
+        </select>
+
+        <label for="embarazo_actual">¿Tiene un embarazo en gestación?:</label>
+        <select name="embarazo_actual" id="embarazo_actual">
+            <option value="SI">Si</option>
+            <option selected value="NO">No</option>
+        </select>
+        
+        <label for="embarazo_planificado">¿Está buscando un embarazo?:</label>
+        <select name="embarazo_planificado" id="embarazo_planificado">
+            <option value="SI">Si</option>
+            <option selected value="NO">No</option>
+        </select>
+
+        <label for="metodo_anticonceptivo">¿Qué método anticonceptivo utiliza?:</label>
+        <select name="metodo_anticonceptivo" id="metodo_anticonceptivo">
+            <option value="NO_USA">No usa</option>
+            <option value="PRESERVATIVO">Preservativo</option>
+            <option selected value="OTROS">Otros</option>
+        </select>
+
+        <label for="enfermedad_patologica">¿Sufre de alguna enfermedad o patología?:</label>
+        <select name="enfermedad_patologica" id="enfermedad_patologica">
+            <option value="SI">Si</option>
+            <option selected value="NO">No</option>
+        </select>
+
+        <label for="controlada">¿La enfermedad está controlada?:</label>
+        <select name="controlada" id="controlada">
+            <option selected value="SI">Si</option>
+            <option value="NO">No</option>
+        </select>
+
+        <label for="examen_fisico">¿Cómo fué el resultado de su último exámen médico?:</label>
+        <select name="examen_fisico" id="examen_fisico">
+            <option selected value="NORMAL">Normal</option>
+            <option value="INTERMEDIO">Intermedio</option>
+            <option value="GRAVE">Grave</option>
+        </select>
+
+        <label for="auscultacion_respiratoria">¿Cómo fué el resultado de su última escultación respiratoria?:</label>
+        <select name="auscultacion_respiratoria" id="auscultacion_respiratoria">
+            <option selected value="NORMAL">Normal</option>
+            <option value="INTERMEDIO">Intermedio</option>
+            <option value="GRAVE">Grave</option>
+        </select>
+        
+        <label for="auscultacion_cardiaca">¿Cómo fué el resultado de su última escultación cardíaca?:</label>
+        <select name="auscultacion_cardiaca" id="auscultacion_cardiaca">
+            <option selected value="NORMAL">Normal</option>
+            <option value="INTERMEDIO">Intermedio</option>
+            <option value="GRAVE">Grave</option>
+        </select>
+
+        <label for="pulso">¿Cómo fué el resultado de su última medición de pulso?:</label>
+        <select name="pulso" id="pulso">
+            <option selected value="NORMAL">Normal</option>
+            <option value="INTERMEDIO">Intermedio</option>
+            <option value="GRAVE">Grave</option>
+        </select>
+
+        <label for="covid">¿Ha tenido Covid-19 positivo?:</label>
+        <select name="covid" id="covid">
+            <option value="SI">Si</option>
+            <option selected value="NO">No</option>
+        </select>
+
+        <label for="vacunacion">¿Se ha vacunado contra el Covid-19?:</label>
+        <select name="vacunacion" id="vacunacion">
+            <option value="SI">Si</option>
+            <option selected value="NO">No</option>
+        </select>
+
+        <label for="enfermedad_grave">¿Tiene alguna enfermedad grave que comprometa su sistema inmunológico?:</label>
+        <select name="enfermedad_grave" id="enfermedad_grave">
+            <option value="SI">Si</option>
+            <option selected value="NO">No</option>
+        </select>
+
+        <button type="submit">Ver resultado</button>
+    </form>
+</body>
+</html>
