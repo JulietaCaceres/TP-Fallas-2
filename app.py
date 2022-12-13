@@ -1,6 +1,5 @@
-from engine.responses import MetodoAnticonceptivo, Edad
-from selector import Sexo
-from engine.inference_engine import InferenceEngine
+from engine.responses import MetodoAnticonceptivo, Edad, Sexo
+from engine.base_de_conocimietos import InferenceEngine
 from flask import Flask
 from flask import request
 from flask import render_template
@@ -76,7 +75,7 @@ def handle_data():
    "enfermedad_grave": enfermedad_grave,
     }
 
-    resultado = expert_engine.startEngine(datos_voluntarie)
+    resultado = expert_engine.get_evaluation_for_volunteer(datos_voluntarie)
     return render_template('result.html', resultado=resultado)
 
 
