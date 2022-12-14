@@ -40,6 +40,7 @@
         
     </style>
 </head>
+
 <body class="container">
     <h1>Candidatos a probar vacuna contra el Covid-19</h1>
     <form action="/handle_data">
@@ -49,8 +50,8 @@
 
         <label for="sexo">Sexo:</label>
         <select name="sexo" id="sexo">
-            <option selected value="MASCULINO">Masculino</option>
-            <option value="FEMENINO">Femenino</option>
+            <option value="MASCULINO">Masculino</option>
+            <option selected value="FEMENINO">Femenino</option>
         </select>
 
         <label for="embarazo_actual">¿Tiene un embarazo en gestación?:</label>
@@ -79,7 +80,7 @@
         </select>
 
         <label for="controlada">¿La enfermedad está controlada?:</label>
-        <select name="controlada" id="controlada">
+        <select name="controlada" id="controlada" disabled=true>
             <option selected value="SI">Si</option>
             <option value="NO">No</option>
         </select>
@@ -132,5 +133,39 @@
 
         <button type="submit">Ver resultado</button>
     </form>
+
+    <script>
+        // Get a reference to the "sexo" field
+        var sexoField = document.getElementById("sexo");
+    
+        // Add an event listener to the "sexo" field to listen for changes
+        sexoField.addEventListener("change", function() {
+        // Get the current value of the "sexo" field
+        var sexoValue = this.value;
+    
+        // If the "sexo" field has value "MASCULINO", disable the "embarazo_actual", "metodo_anticonceptivo" and "embarazo_planificado" fields
+        if (sexoValue === "MASCULINO") {
+            document.getElementById("embarazo_actual").disabled = true;
+            document.getElementById("metodo_anticonceptivo").disabled = true;
+            document.getElementById("embarazo_planificado").disabled = true;
+        } else {
+            document.getElementById("embarazo_actual").disabled = false;
+            document.getElementById("metodo_anticonceptivo").disabled = false;
+            document.getElementById("embarazo_planificado").disabled = false;
+        }
+        });
+
+        var enfermedadPatologica = document.getElementById("enfermedad_patologica");
+
+        enfermedadPatologica.addEventListener("change", function() {
+            var enfermedadPatologica = this.value;
+
+            if (enfermedadPatologica === "SI") {
+                document.getElementById("controlada").disabled = false;
+            } else {
+                document.getElementById("controlada").disabled = true;
+            }
+        }); 
+    </script>
 </body>
 </html>

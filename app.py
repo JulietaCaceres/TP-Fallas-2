@@ -63,7 +63,7 @@ def handle_data():
    "sexo": Sexo(sexo),
    "embarazo_actual": embarazo_actual,
    "embarazo_planificado": embarazo_planificado,
-   "metodo_anticonceptivo": MetodoAnticonceptivo(metodo_anticonceptivo),
+   "metodo_anticonceptivo": MetodoAnticonceptivo("NO_APLICA" if metodo_anticonceptivo == None else metodo_anticonceptivo),
    "enfermedad_patologica": enfermedad_patologica,
    "controlada": controlada,
    "examen_fisico": examen_fisico,
